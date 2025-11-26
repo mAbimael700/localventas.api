@@ -1,6 +1,6 @@
 package com.localventas.api.domain.systemrole;
 
-import com.localventas.api.domain.user.User;
+import com.localventas.api.domain.user.entities.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +19,8 @@ public class SystemRole {
 
     @Column(nullable = false, unique = true)
     private String name;
+
+    private String code;
 
     private String description;
 
