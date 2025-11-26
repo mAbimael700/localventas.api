@@ -1,4 +1,4 @@
-package com.localventas.api.domain.user;
+package com.localventas.api.domain.user.entities;
 
 public enum UserStatus {
     ACTIVE,

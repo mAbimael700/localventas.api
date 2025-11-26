@@ -1,12 +1,9 @@
-package com.localventas.api.domain.user;
+package com.localventas.api.domain.user.entities;
 
 import com.localventas.api.domain.person.Person;
 import com.localventas.api.domain.systemrole.SystemRole;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -18,6 +15,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -58,7 +56,10 @@ public class User {
 
     @PrePersist
     protected void onCreate() {
-        this.createdAt = LocalDateTime.now();
+        LocalDateTime creationDate = LocalDateTime.now();
+
+        this.createdAt = creationDate;
+        this.modifiedAt = creationDate;
     }
 
     @PreUpdate
