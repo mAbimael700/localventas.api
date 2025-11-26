@@ -2,7 +2,7 @@ package com.localventas.api.domain.commercebrand;
 
 
 import com.localventas.api.domain.brand.Brand;
-import com.localventas.api.domain.commerce.Commerce;
+import com.localventas.api.domain.commerce.entities.Commerce;
 import com.localventas.api.domain.commercediscount.CommerceDiscount;
 import com.localventas.api.domain.productdistributor.ProductDistributor;
 import jakarta.persistence.*;

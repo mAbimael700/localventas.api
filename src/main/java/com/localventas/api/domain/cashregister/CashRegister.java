@@ -1,6 +1,6 @@
 package com.localventas.api.domain.cashregister;
 
-import com.localventas.api.domain.commerce.Commerce;
+import com.localventas.api.domain.commerce.entities.Commerce;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

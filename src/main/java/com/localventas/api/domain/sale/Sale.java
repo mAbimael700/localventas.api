@@ -1,8 +1,7 @@
 package com.localventas.api.domain.sale;
 
-import com.localventas.api.domain.address.Address;
 import com.localventas.api.domain.cashregistersession.CashRegisterSession;
-import com.localventas.api.domain.commerce.Commerce;
+import com.localventas.api.domain.commerce.entities.Commerce;
 import com.localventas.api.domain.employee.Employee;
 import com.localventas.api.domain.order.Order;
 import com.localventas.api.domain.order.OrderStatus;

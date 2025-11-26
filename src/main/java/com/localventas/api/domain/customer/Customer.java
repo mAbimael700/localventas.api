@@ -1,7 +1,7 @@
 package com.localventas.api.domain.customer;
 
-import com.localventas.api.domain.commerce.Commerce;
-import com.localventas.api.domain.user.User;
+import com.localventas.api.domain.commerce.entities.Commerce;
+import com.localventas.api.domain.user.entities.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,6 +1,5 @@
 package com.localventas.api.domain.brand;
 
-import com.localventas.api.domain.commerce.Commerce;
 import com.localventas.api.domain.commercebrand.CommerceBrand;
 import jakarta.persistence.*;
 import lombok.*;

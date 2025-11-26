@@ -1,7 +1,7 @@
 package com.localventas.api.domain.notification;
 
 import com.localventas.api.domain.notificationtype.NotificationType;
-import com.localventas.api.domain.user.User;
+import com.localventas.api.domain.user.entities.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

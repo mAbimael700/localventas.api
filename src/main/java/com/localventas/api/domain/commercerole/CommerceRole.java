@@ -1,6 +1,5 @@
 package com.localventas.api.domain.commercerole;
 
-import com.localventas.api.domain.commerce.Commerce;
 import com.localventas.api.domain.commercepermission.CommercePermission;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,11 +1,11 @@
-package com.localventas.api.domain.commerce;
+package com.localventas.api.domain.commerce.entities;
 
 import com.localventas.api.domain.commercecategory.CommerceCategory;
 import com.localventas.api.domain.commercebrand.CommerceBrand;
 import com.localventas.api.domain.commerceservice.CommerceService;
 import com.localventas.api.domain.commerceproduct.CommerceProduct;
 import com.localventas.api.domain.employee.Employee;
-import com.localventas.api.domain.user.User;
+import com.localventas.api.domain.user.entities.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -61,12 +61,14 @@ public class Commerce {
 
     @PrePersist
     protected void onCreate() {
-        createdAt = LocalDateTime.now();
+        LocalDateTime dateTime =LocalDateTime.now();
+        this.createdAt = dateTime;
+        this.modifiedAt = dateTime;
     }
 
     @PreUpdate
     protected void onUpdate() {
-        modifiedAt = LocalDateTime.now();
+        this.modifiedAt = LocalDateTime.now();
     }
 
     // Métodos helper
