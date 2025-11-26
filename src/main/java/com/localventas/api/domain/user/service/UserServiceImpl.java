@@ -47,6 +47,7 @@ public class UserServiceImpl implements UserService {
                 .emailVerified(false)
                 .systemRoles(userSystemRoles)
                 .status(UserStatus.PENDING_VERIFICATION)
+                .phoneNumber(request.phoneNumber())
                 .build();
 
         return userRepository.save(newUser);
