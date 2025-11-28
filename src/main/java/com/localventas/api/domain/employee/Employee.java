@@ -1,24 +1,24 @@
 package com.localventas.api.domain.employee;
 
-import com.localventas.api.domain.commerce.Commerce;
+import com.localventas.api.domain.commerce.entities.Commerce;
 import com.localventas.api.domain.commercerole.CommerceRole;
-import com.localventas.api.domain.commercepermission.PermissionType;
-import com.localventas.api.domain.user.User;
+import com.localventas.api.domain.commercepermission.CommercePermissionType;
+import com.localventas.api.domain.user.entities.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "employees",
         uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "commerce_id"}))
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Employee {
@@ -58,7 +58,7 @@ public class Employee {
             joinColumns = @JoinColumn(name = "employee_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    private List<CommerceRole> roles = new ArrayList<>();
+    private Set<CommerceRole> roles = new HashSet<>();
 
     @PrePersist
     protected void onCreate() {
@@ -75,9 +75,7 @@ public class Employee {
 
     // Métodos helper
     public void addRole(CommerceRole role) {
-        if (!this.roles.contains(role)) {
-            this.roles.add(role);
-        }
+        this.roles.add(role);
     }
 
     public void removeRole(CommerceRole role) {
@@ -88,12 +86,12 @@ public class Employee {
         return this.roles.contains(role);
     }
 
-    public boolean hasPermission(String moduleName, PermissionType permissionType) {
+    public boolean hasPermission(String moduleName, CommercePermissionType commercePermissionType) {
         return roles.stream()
                 .flatMap(role -> role.getPermissions().stream())
                 .anyMatch(permission ->
                         permission.getModule().getName().equals(moduleName) &&
-                                permission.getPermissionType() == permissionType
+                                permission.getCommercePermissionType() == commercePermissionType
                 );
     }
 

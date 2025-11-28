@@ -1,6 +1,6 @@
 package com.localventas.api.domain.commercepermission;
 
-public enum PermissionType {
+public enum CommercePermissionType {
     VIEW,           // Ver/Leer
     CREATE,         // Crear
     UPDATE,         // Actualizar

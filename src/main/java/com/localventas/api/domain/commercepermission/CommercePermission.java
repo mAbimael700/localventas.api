@@ -29,8 +29,8 @@ public class CommercePermission {
     private CommerceModule module;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "permission_type", nullable = false)
-    private PermissionType permissionType;
+    @Column(name = "commerce_permission_type", nullable = false)
+    private CommercePermissionType commercePermissionType;
 
     private Boolean granted = true;
 }
