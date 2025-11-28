@@ -16,7 +16,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class CommerceProductSaleItem extends SaleItem {
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id", nullable = false)
+    @JoinColumn(name = "commerce_product_id", nullable = false)
     private CommerceProduct commerceProduct;
 
     @ManyToOne(fetch = FetchType.LAZY)
